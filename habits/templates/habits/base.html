@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Habit Master</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);}
+        .navbar{background:#2c3e50;color:white;padding:1rem;display:flex;justify-content:space-between;}
+        .container{max-width:1200px;margin:2rem auto;padding:2rem;background:white;border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,0.2);}
+        .habits-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2rem;}
+        .habit-card{background:#f8f9ff;border-radius:15px;padding:2rem;box-shadow:0 5px 15px rgba(0,0,0,0.1);transition:all 0.3s;}
+        .habit-card:hover{transform:translateY(-5px);}
+        .btn{background:linear-gradient(45deg,#3498db,#2980b9);color:white;padding:0.8rem 1.5rem;text-decoration:none;border-radius:25px;display:inline-block;}
+        h2{margin-bottom:2rem;color:#2c3e50;}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h1>🎯 Habit Master</h1>
+        <div>
+            <a href="/admin/" style="color:white;margin-right:1rem;">Admin</a>
+            <a href="/progress/" style="color:white;">📊 Progres</a>
+        </div>
+    </nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

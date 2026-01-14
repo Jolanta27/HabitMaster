@@ -1,0 +1,8 @@
+{% extends 'habits/base.html' %}
+{% block content %}
+<h2>{{ habit.name }}</h2>
+<p><strong>Kategoria:</strong> {{ habit.category.name }}</p>
+<p><strong>Cel:</strong> {{ habit.goal_frequency }}x/tydzień</p>
+<p><strong>Najlepsza seria:</strong> {{ habit.longest_streak }} dni</p>
+<a href="/" class="btn">← Powrót</a>
+{% endblock %}

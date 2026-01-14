@@ -1,0 +1,20 @@
+{% extends 'habits/base.html' %}
+{% block content %}
+<h2>📋 Lista Nawyków</h2>
+<div class="habits-grid">
+    {% for habit in habits %}
+    <div class="habit-card">
+        <h3>{{ habit.name }}</h3>
+        <p><strong>Kategoria:</strong> {{ habit.category.name }}</p>
+        <p><strong>Cel:</strong> {{ habit.goal_frequency }}x/tydzień</p>
+        <p><strong>Seria:</strong> {{ habit.current_streak }} dni</p>
+        <a href="{% url 'habit_detail' habit.pk %}" class="btn">Szczegóły</a>
+    </div>
+    {% empty %}
+    <div style="text-align:center;padding:3rem;">
+        <h3>Brak nawyków 😢</h3>
+        <p>Dodaj pierwsze nawyki w <a href="/admin/">panelu admin</a></p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
