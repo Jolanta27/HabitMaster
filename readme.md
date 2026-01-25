@@ -11,7 +11,20 @@
 - ✅ **Widok statystyk** `/progress/` z responsywnymi kartami
 - ✅ **Responsywny design** (mobile-first, gradienty CSS)
 
+## 📸 Demo Screenshots
+<div align="center">
+ ![Zrzut ekranu 2026-01-25 o 13 51 23](https://github.com/user-attachments/assets/230daee3-07ae-4a18-b6c0-1b9b92c91b0d)
+ ![Zrzut ekranu 2026-01-25 o 13 54 06](https://github.com/user-attachments/assets/91ab9912-0132-4511-a214-2ed64dfd74b0)
+ ![Zrzut ekranu 2026-01-25 o 14 06 37](https://github.com/user-attachments/assets/7742996a-39b9-49af-89d4-38ef577f67ab)
+ ![Zrzut ekranu 2026-01-25 o 14 06 17](https://github.com/user-attachments/assets/d02b7f16-e6c4-4647-ace2-5a7991b13a53)
+ ![Zrzut ekranu 2026-01-25 o 14 00 25](https://github.com/user-attachments/assets/523f3f75-d6ed-4326-87e4-81ba334924c0)
+ ![Zrzut ekranu 2026-01-25 o 13 54 54](https://github.com/user-attachments/assets/81b613f0-d228-4afa-bf54-17202cc9609c) 
+</div>
+
 ## 📱 Demo (lokalnie):
+🌐 Lista: http://127.0.0.1:8000/
+📊 Progress: http://127.0.0.1:8000/progress/
+⚙️ Admin: http://127.0.0.1:8000/admin/
 
 ## 🛠️ Instalacja:
 ```bash
