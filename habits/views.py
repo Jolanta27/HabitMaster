@@ -50,6 +50,8 @@ def habit_progress(request):
             'name': habit.name,
             'category': habit.category.name,
             'rate': round(rate, 1),
+            'completed': completed_logs,
+            'total': total_logs,
             'streak': habit.current_streak
         })
     

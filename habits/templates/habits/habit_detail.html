@@ -1,20 +1,121 @@
 {% extends 'habits/base.html' %}
 {% block content %}
 <div class="detail-container">
-    <a href="{% url 'habit_list' %}" class="back-btn">← Powrót</a>
+    <a href="{% url 'habit_list' %}" class="back-btn">← Powrót do listy</a>
     
-    <h1>{{ habit.name }}</h1>
-    <p><strong>Kategoria:</strong> {{ habit.category.name }}</p>
-    <p><strong>Cel:</strong> {{ habit.goal_frequency }}x/tydzień</p>
-    <p><strong>Seria:</strong> {{ habit.current_streak }} dni</p>
+    <div class="habit-card detail-card">
+        <h1>{{ habit.name }}</h1>
+        <p><strong>🗂️ Kategoria:</strong> {{ habit.category.name }}</p>
+        <p><strong>🎯 Cel:</strong> {{ habit.goal_frequency }}x/tydzień</p>
+        <p><strong>🔥 Seria:</strong> {{ habit.current_streak }} dni</p>
+    </div>
     
     <form method="post" class="edit-form">
         {% csrf_token %}
-        <input type="text" name="name" value="{{ habit.name }}" required>
-        <input type="number" name="goal_frequency" value="{{ habit.goal_frequency }}" required>
-        <button type="submit">💾 Zapisz</button>
-        <button type="submit" name="delete" value="delete" 
-                onclick="return confirm('Usunąć {{ habit.name }}?')">🗑️ Usuń</button>
+        <div class="form-group">
+            <input type="text" name="name" value="{{ habit.name }}" required 
+                   class="form-input" placeholder="Nazwa nawyku">
+        </div>
+        <div class="form-group">
+            <input type="number" name="goal_frequency" value="{{ habit.goal_frequency }}" required 
+                   min="1" class="form-input" placeholder="Cel na tydzień">
+        </div>
+        <div class="form-buttons">
+            <button type="submit" class="btn btn-success">💾 Zapisz zmiany</button>
+            <button type="submit" name="delete" value="delete" 
+                    class="btn btn-danger" 
+                    onclick="return confirm('Na pewno usunąć {{ habit.name }}?')">🗑️ Usuń nawyk</button>
+        </div>
     </form>
 </div>
+
+<style>
+.detail-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.detail-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin-bottom: 2rem;
+}
+
+.edit-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+}
+
+.btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #dc3545, #c82333);
+    color: white;
+}
+
+.btn-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(220, 53, 69, 0.4);
+}
+
+.back-btn {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: #667eea;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.back-btn:hover {
+    color: #5a67d8;
+}
+</style>
 {% endblock %}
