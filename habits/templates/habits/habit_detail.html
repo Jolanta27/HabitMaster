@@ -1,8 +1,20 @@
 {% extends 'habits/base.html' %}
 {% block content %}
-<h2>{{ habit.name }}</h2>
-<p><strong>Kategoria:</strong> {{ habit.category.name }}</p>
-<p><strong>Cel:</strong> {{ habit.goal_frequency }}x/tydzień</p>
-<p><strong>Najlepsza seria:</strong> {{ habit.longest_streak }} dni</p>
-<a href="/" class="btn">← Powrót</a>
+<div class="detail-container">
+    <a href="{% url 'habit_list' %}" class="back-btn">← Powrót</a>
+    
+    <h1>{{ habit.name }}</h1>
+    <p><strong>Kategoria:</strong> {{ habit.category.name }}</p>
+    <p><strong>Cel:</strong> {{ habit.goal_frequency }}x/tydzień</p>
+    <p><strong>Seria:</strong> {{ habit.current_streak }} dni</p>
+    
+    <form method="post" class="edit-form">
+        {% csrf_token %}
+        <input type="text" name="name" value="{{ habit.name }}" required>
+        <input type="number" name="goal_frequency" value="{{ habit.goal_frequency }}" required>
+        <button type="submit">💾 Zapisz</button>
+        <button type="submit" name="delete" value="delete" 
+                onclick="return confirm('Usunąć {{ habit.name }}?')">🗑️ Usuń</button>
+    </form>
+</div>
 {% endblock %}

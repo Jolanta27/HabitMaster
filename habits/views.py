@@ -1,5 +1,5 @@
 from django.utils import timezone
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Habit, Category, DailyLog
 
 def habit_list(request):
@@ -21,6 +21,17 @@ def habit_list(request):
 
 def habit_detail(request, pk):
     habit = get_object_or_404(Habit, pk=pk)
+    
+    if request.method == 'POST':
+        if 'delete' in request.POST:
+            habit.delete()
+            return redirect('habit_list')
+        else:
+            habit.name = request.POST.get('name', habit.name)
+            habit.goal_frequency = request.POST.get('goal_frequency', habit.goal_frequency)
+            habit.save()
+            return redirect('habit_list')
+    
     return render(request, 'habits/habit_detail.html', {'habit': habit})
 
 def habit_progress(request):
