@@ -13,10 +13,9 @@
 
 ## 📸 Demo Screenshots
 <div align="center">
- ![](https://github.com/user-attachments/assets/230daee3-07ae-4a18-b6c0-1b9b92c91b0d)
- ![](https://github.com/user-attachments/assets/7742996a-39b9-49af-89d4-38ef577f67ab)
- ![](https://github.com/user-attachments/assets/523f3f75-d6ed-4326-87e4-81ba334924c0)
- ![](https://github.com/user-attachments/assets/81b613f0-d228-4afa-bf54-17202cc9609c) 
+![Zrzut ekranu 2026-01-25 o 13 51 23](https://github.com/user-attachments/assets/9c5694a9-25ef-4fda-8a72-a9c73ad0c7e1)
+
+
 </div>
 
 ## 📱 Demo (lokalnie):
