@@ -12,11 +12,7 @@
 - ✅ **Responsywny design** (mobile-first, gradienty CSS)
 
 ## 📸 Demo Screenshots
-<div align="center">
-![Zrzut ekranu 2026-01-25 o 13 51 23](https://github.com/user-attachments/assets/9c5694a9-25ef-4fda-8a72-a9c73ad0c7e1)
-
-
-</div>
+![Lista nawyków](https://github.com/user-attachments/assets/9c5694a9-25ef-4fda-8a72-a9c73ad0c7e1)
 
 ## 📱 Demo (lokalnie):
 🌐 Lista: http://127.0.0.1:8000/
